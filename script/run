@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+docker build . \
+  --progress=plain \
+  -f Dockerfile \
+  -t swapi
+
+docker run --rm -it -p 3000:3000 swapi
