@@ -1,0 +1,10 @@
+name: swapi
+version: 0.1.0
+
+targets:
+  server:
+    main: simple_server.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
