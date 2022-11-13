@@ -9,9 +9,13 @@ export default class HistoricalEvent extends SWAPIBackedComponent {
     this.attachHTML('historical-event.html')
   }
 
-  lookup () {
-    SWAPI.getFilm(this.id).then(data => this.data = data)
+  async lookup () {
+    if (this.id)
+      return SWAPI.getFilm(this.id).then(data => this.data = data)
+    else
+      return Promise.resolve()
   }
+
 
   fill () {
     if (! this.domAttached) return

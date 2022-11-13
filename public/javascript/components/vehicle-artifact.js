@@ -9,8 +9,11 @@ export default class VehicleArtifact extends SWAPIBackedComponent {
     this.attachHTML('vehicle-artifact.html')
   }
 
-  lookup () {
-    SWAPI.getVehicle(this.id).then(data => this.data = data)
+  async lookup () {
+    if (this.id)
+      return SWAPI.getVehicle(this.id).then(data => this.data = data)
+    else
+      return Promise.resolve()
   }
 
   fill () {

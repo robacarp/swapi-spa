@@ -10,12 +10,16 @@ export default class Dossier extends SWAPIBackedComponent {
     this.attachHTML('dossier-profile.html')
   }
 
-  lookup () {
-    SWAPI.getPerson(this.id).then(data => this.data = data)
+  async lookup () {
+    if (this.id)
+      return SWAPI.getPerson(this.id).then(data => this.data = data)
+    else
+      return Promise.resolve()
   }
 
   fill () {
     if (! this.domAttached) return
+
     this.Q("#name").innerText = this.apiData.name
     this.Q("#height").innerText = this.apiData.height
     this.Q("#mass").innerText = this.apiData.mass
