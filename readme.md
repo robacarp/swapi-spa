@@ -38,3 +38,9 @@ Front end SWAPI caching [is implemented](https://github.com/robacarp/swapi-spa/b
 - `overmind s` to boot and run everything
 - visit [http://0.0.0.0:3000](http://0.0.0.0:3000)
 - ctrl-c to quit.
+
+## Testing
+
+Testing is powered by Jasmine, but run in the browser. Run the app with whatever method you choose, then [visit the test runner](http://0.0.0.0:3000/test.html).
+
+The test suite is proof-of-conceptual-knowledge only, a full test suite would be much more verbose.
